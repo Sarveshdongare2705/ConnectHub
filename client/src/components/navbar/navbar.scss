@@ -1,0 +1,159 @@
+@import "../../style.scss";
+.navbar{
+    @include themify($themes){
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: themed(bg);
+    color: themed(textColor);
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include mobile{
+            gap: 10px;
+        }
+
+        .homeicon{
+            @include mobile{
+                display: none;
+            }
+        }
+        span{
+            font-weight: bold;
+            font-size: 24px;
+            color: themed(logo);
+            font-family: 'Courier New', Courier, monospace;
+
+            @include mobile{
+                font-size: 18px;
+            }
+        }
+
+        .search{
+            display: flex;
+            align-items: center;
+            height: 30px;
+            gap: 10px;
+            border: 2px solid themed(border);
+            border-radius: 20px;
+            padding: 3px;
+
+            @include mobile{
+                margin-right: 10px;
+            }
+
+            input{
+                border: none;
+                background-color: themed(bg);
+                color: themed(textColor);
+                width: 500px;
+
+                @include mobile{
+                    width: 66px;
+                }
+            }
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+
+        @include mobile{
+            gap: 10px;
+        }
+        .righticon{
+            @include mobile{
+                display: none;
+            }
+        }
+
+        .othericons{
+            display: none;
+
+            @include mobile{
+                position: absolute;
+                top: 60px;
+                right: 30px;
+                display: flex;
+                gap: 7px;
+                flex-direction: column;
+                align-items: center;
+                 padding: 10px;
+                 border-radius: 10px;
+                 background-color: themed(bgSoft);
+                 border: 3px solid themed(border);
+            }
+
+        }
+
+        .presser{
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            display: none;
+
+            @include mobile{
+                display: block;
+            }
+        }
+
+        .presser:hover{
+            transform: scale(1.2);
+        }
+
+
+        .othericons{
+            position: absolute;
+            left: -110px;
+            display: flex;
+            gap: 7px;
+        }
+
+        @include mobile{
+            display: flex;
+            justify-content: end;
+        }
+
+        .othericons{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .user{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            img{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid themed(logo);
+                @include mobile{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                }
+            }
+            span{
+                padding: 3px;
+
+                @include mobile{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+}

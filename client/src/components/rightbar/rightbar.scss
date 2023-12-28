@@ -1,0 +1,114 @@
+@import "../../style.scss";
+.rightbar{
+    @include themify($themes){
+    flex: 3.2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: sticky;
+    top: 70px;
+    background-color: themed(bgSoft);
+    height: calc(100vh - 72px);
+    overflow: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    @include mobile{
+    display: none;}
+
+    .container{
+        padding: 20px;
+
+        .item{
+            background-color: themed(bg);
+            padding: 7px;
+            box-shadow: 0px 0px 15px 1px themed(bg);
+
+            margin-bottom: 20px;
+
+            span{
+                font-size: 14px;
+                color: themed(textColorSoft);
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin: 10px;
+                .userInfo{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+
+                    img{
+                        height: 40px;
+                        width: 40px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    .online{
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: limegreen;
+                        border: 3px solid themed(bg);
+                        position: absolute;
+                        top: 0;
+                        left: 30px;
+
+                    }
+
+                    p{
+                        width: 180px;
+                        color: gray;
+                        font-size: 12px;
+                    }
+
+                    span{
+                        color: themed(textColor);
+                        font-size: 13px;
+                    }
+                }
+                .date{
+                    text-align: end;
+                    width: 70px;
+                    font-size: 12px;
+                    color: themed(textColorSoft);
+                }
+                .buttons{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    button{
+                        border: none;
+                        padding: 7px;
+                        color: white;
+                        cursor: pointer;
+                        border-radius: 20px;
+
+                        &:first-child{
+                            background-color: rebeccapurple;
+                            transition: 0.3s ease-in-out;
+                            border: 2px solid rebeccapurple;
+                        }
+                        &:first-child:hover{
+                            opacity: 0.6;
+                        }
+                        &:last-child{
+                            background-color: red;
+                            transition: 0.3s ease-in-out;
+                            border: 2px solid red;
+                        }
+                        &:last-child:hover{
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

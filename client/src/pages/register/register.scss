@@ -1,0 +1,94 @@
+.register{
+
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    background-color: rgb(193,150,255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .card{
+        width: 50%;
+        display: flex;
+        flex-direction: row-reverse;
+        background-color: white;
+        min-height: 400px;
+
+        .left{
+            flex: 1;//linear gradient for purple effect
+            background: linear-gradient(rgba(39,11,96,0.5) , rgba(39,11,96,0.5))  ,  url("https://images.pexels.com/photos/1036804/pexels-photo-1036804.jpeg?auto=compress&cs=tinysrgb&w=600");
+            background-size: cover;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            color: white;
+
+            h1{
+                font-size: 70px;
+                line-height: 70px;
+            }
+            p{
+                margin-top: -30px;
+                font-size: 20px;
+            }
+            span{
+                font-size: 15px;
+            }
+            button{
+                width: 50%;
+                padding: 10px;
+                border: none;
+                background-color: white;
+                color: rebeccapurple;
+                font-weight: bold;
+                transition: 0.3s ease-in-out;
+            }
+            button:hover{
+                background-color: rebeccapurple;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+        .right{
+            flex: 1; //equal width
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            h1{
+                font-size: 30px;
+                color: black;
+            }
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                input{
+                    border: none;
+                    border-bottom: 2px solid lightgray;
+                    padding: 20px 10px;
+
+                }
+                button{
+                    margin-top: 60px;
+                    width: 50%;
+                    padding: 10px;
+                    border: none;
+                    background-color: rebeccapurple;
+                    color: white;
+                    border: 1px solid white;
+                    font-weight: bold;
+                    transition: 0.3s ease-in-out;
+                }
+                button:hover{
+                    background-color: white;
+                    color: rebeccapurple;
+                    border: 1px solid rebeccapurple;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

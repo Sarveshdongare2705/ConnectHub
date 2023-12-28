@@ -1,0 +1,78 @@
+@import "../../style.scss";
+.leftbar{
+    @include themify($themes){
+    position: sticky;
+    top: 70px;
+    background-color: themed(bg);
+    height: calc(100vh - 72px);
+    overflow: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+
+    @include mobile{
+    display: none;}
+
+    flex: 2;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .container{
+        padding: 20px;
+
+        hr{
+            color: themed(border);
+            margin: 10px 0px;
+        }
+
+
+        .menu{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            span{
+                color: themed(textColorSoft);
+                font-size: 10px;
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                img{
+                    border: 2px solid themed(textColor);
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+
+                }
+                span{
+                    font-size: 15px;
+                    color: themed(textColor);
+                }
+            }
+            .item{
+                display: flex;
+                align-items: center;
+                padding: 3px;
+                transition: 0.3s ease-in-out;
+                gap: 10px;
+                img{
+                    width: 25px;
+                    height: 25px;
+                    object-fit: cover;
+                }
+                span{
+                    font-size: 15px;
+                    color: themed(textColor);
+                }
+            }
+            .item:hover{
+                background-color: themed(bgSoft);
+                cursor: pointer;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+}
